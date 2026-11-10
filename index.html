@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dentist Oroville | Pro Dental family and cosmetic dentistry</title>
+<meta name="description" content="Pro Dental — Dental Group of Dr. Amy H Pham. Family and cosmetic dentistry in Oroville, California. New patients and walk-ins welcome. Se Habla Español." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#070E20;
+    --navy-2:#0d1930;
+    --navy-3:#13224016;
+    --blue:#2968FE;
+    --blue-600:#1c54e0;
+    --blue-soft:#e7eefc;
+    --ink:#0B1220;
+    --slate:#3A4756;
+    --slate-2:#5a6676;
+    --bg:#F3F7FC;
+    --bg-alt:#E9F1F9;
+    --white:#ffffff;
+    --line:#dfe8f2;
+    --radius:22px;
+    --radius-sm:14px;
+    --shadow:0 24px 60px -24px rgba(11,18,32,.28);
+    --shadow-sm:0 12px 30px -16px rgba(11,18,32,.25);
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--slate);
+    font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Archivo",sans-serif;color:var(--ink);margin:0;line-height:1.02;letter-spacing:-.02em}
+  h1{font-weight:900;font-size:clamp(2.6rem,6.2vw,5rem);letter-spacing:-.035em}
+  h2{font-weight:900;font-size:clamp(2rem,4.4vw,3.5rem);letter-spacing:-.03em}
+  h3{font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+  p{margin:0 0 1rem}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .accent{color:var(--blue)}
+  section{position:relative}
+
+  /* Eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Archivo",sans-serif;
+    font-weight:800;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--blue);border-radius:2px}
+  .eyebrow.center{justify-content:center}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:"Archivo",sans-serif;font-weight:700;
+    font-size:.98rem;padding:15px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .15s ease,background .2s ease,box-shadow .2s ease,color .2s ease;white-space:nowrap}
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 14px 30px -12px rgba(41,104,254,.6)}
+  .btn-primary:hover{background:var(--blue-600);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:#c9d6e6}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-white{background:#fff;color:var(--navy)}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-outline-white:hover{border-color:#fff;transform:translateY(-2px)}
+
+  /* Top utility bar */
+  .topbar{background:var(--navy);color:#cdd7e6;font-size:.86rem}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:44px}
+  .topbar a{color:#cdd7e6;display:inline-flex;align-items:center;gap:7px;transition:color .2s}
+  .topbar a:hover{color:#fff}
+  .topbar .sep{opacity:.3}
+  .topbar .right{display:flex;align-items:center;gap:18px}
+  .topbar b{color:#fff}
+
+  /* Header */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(7,14,32,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:11px;color:#fff;font-family:"Archivo",sans-serif;font-weight:900;
+    font-size:1.5rem;letter-spacing:-.03em}
+  .logo img{height:46px;width:auto;display:block}
+  .logo .mark{width:38px;height:38px;flex:0 0 38px}
+  .logo small{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;color:var(--blue);
+    text-transform:uppercase;margin-top:2px}
+  .menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+  .menu a{color:#d7deea;font-weight:600;font-size:.96rem;transition:color .2s;position:relative}
+  .menu a:hover{color:#fff}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .nav-phone{color:#fff;font-family:"Archivo",sans-serif;font-weight:800;display:flex;align-items:center;gap:8px}
+  .nav-phone svg{color:var(--blue)}
+  .hamburger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.04);color:#fff;align-items:center;justify-content:center;cursor:pointer}
+
+  /* Hero */
+  .hero{background:
+      radial-gradient(1200px 600px at 78% -10%,rgba(41,104,254,.35),transparent 60%),
+      radial-gradient(900px 500px at 8% 110%,rgba(41,104,254,.18),transparent 55%),
+      linear-gradient(180deg,#070E20 0%,#0b1631 100%);
+    color:#fff;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:26px 26px;opacity:.5;pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;
+    align-items:center;padding-top:72px;padding-bottom:86px}
+  .hero h1{color:#fff}
+  .hero .lead{color:#c3cede;font-size:1.14rem;max-width:34em;margin:22px 0 30px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
+  .rating{display:flex;align-items:center;gap:12px;color:#aeb9ca;font-size:.92rem;flex-wrap:wrap}
+  .stars{color:#ffc53d;letter-spacing:2px;font-size:1.05rem}
+  .rating b{color:#fff}
+  .hero-eyebrow{color:#7aa2ff}
+  .hero-eyebrow::before{background:#7aa2ff}
+
+  /* Hero visual card */
+  .hero-card{position:relative;background:linear-gradient(160deg,#122a55,#0e1c3a);border-radius:28px;
+    aspect-ratio:4/4.4;border:1px solid rgba(255,255,255,.1);overflow:hidden;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+  .hero-card .scene{position:absolute;inset:0;
+    background:radial-gradient(130% 100% at 50% 0%,#1b3a6e,#0b1733 70%);}
+  .hero-card .glow{position:absolute;inset:0;background:
+    radial-gradient(60% 50% at 70% 25%,rgba(41,104,254,.55),transparent 60%),
+    radial-gradient(55% 45% at 25% 85%,rgba(120,170,255,.28),transparent 60%)}
+  .tooth{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:58%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4))}
+  .hero-badge{position:absolute;left:18px;bottom:18px;background:rgba(7,14,32,.82);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 18px;z-index:3}
+  .hero-badge b{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.5rem;color:#fff;display:block;line-height:1}
+  .hero-badge span{font-size:.82rem;color:#aeb9ca}
+  .hero-badge2{position:absolute;right:18px;top:18px;background:rgba(255,255,255,.95);border-radius:14px;
+    padding:11px 15px;z-index:3;box-shadow:var(--shadow-sm)}
+  .hero-badge2 b{font-family:"Archivo";font-weight:900;color:var(--ink);font-size:1.1rem;display:block;line-height:1}
+  .hero-badge2 span{font-size:.72rem;color:var(--slate-2);text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+
+  /* Generic section padding */
+  .sec{padding:92px 0}
+  .sec-tight{padding:70px 0}
+  .bg-alt{background:var(--bg-alt)}
+  .bg-white{background:#fff}
+
+  /* About split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .checks{list-style:none;margin:26px 0 30px;padding:0;display:grid;gap:14px}
+  .checks li{display:flex;align-items:flex-start;gap:13px;font-weight:600;color:var(--ink)}
+  .checks .ic{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--blue-soft);
+    color:var(--blue);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .checks .ic svg{width:15px;height:15px}
+  .about-visual{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;
+    background:linear-gradient(160deg,#0e1c3a,#1b3a7e);box-shadow:var(--shadow)}
+  .about-visual .pat{position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px}
+  .about-visual .big-mark{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:46%;opacity:.95}
+  .about-visual .vbadge{position:absolute;left:20px;bottom:20px;background:rgba(7,14,32,.8);
+    border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 20px;color:#fff;backdrop-filter:blur(6px)}
+  .about-visual .vbadge b{font-family:"Archivo";font-weight:900;font-size:1.7rem;display:block;line-height:1}
+  .about-visual .vbadge span{color:#aeb9ca;font-size:.85rem}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;border-top:1px solid var(--line);
+    padding-top:46px;margin-top:62px}
+  .stat b{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:var(--ink);
+    display:block;line-height:1;letter-spacing:-.03em}
+  .stat b i{color:var(--blue);font-style:normal}
+  .stat span{color:var(--slate-2);font-size:.95rem;display:block;margin-top:8px}
+
+  /* Section head */
+  .shead{max-width:640px}
+  .shead.center{margin:0 auto;text-align:center}
+  .shead p{margin-top:16px;font-size:1.08rem}
+
+  /* Service cards */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column}
+  .scard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .scard .top{height:180px;position:relative;overflow:hidden}
+  .scard .top .mesh{position:absolute;inset:0}
+  .scard .top .picon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;color:#fff}
+  .scard .body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+  .label{font-family:"Archivo",sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+  .scard h3{margin-bottom:10px}
+  .scard p{font-size:.98rem;color:var(--slate)}
+  .learn{margin-top:auto;padding-top:14px;font-family:"Archivo";font-weight:700;color:var(--blue);
+    display:inline-flex;align-items:center;gap:7px;font-size:.95rem}
+  .learn svg{width:15px;height:15px;transition:transform .2s}
+  .scard:hover .learn svg{transform:translate(3px,-3px)}
+
+  /* Services list chips */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+  .svc{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:18px 20px;font-weight:600;color:var(--ink);transition:.2s;box-shadow:var(--shadow-sm)}
+  .svc:hover{border-color:#bcd0ee;transform:translateY(-3px)}
+  .svc .d{flex:0 0 40px;width:40px;height:40px;border-radius:11px;background:var(--blue-soft);color:var(--blue);
+    display:flex;align-items:center;justify-content:center}
+  .svc .d svg{width:20px;height:20px}
+
+  /* Process / Invisalign steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;position:relative;box-shadow:var(--shadow-sm)}
+  .step .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:2.6rem;color:var(--blue);opacity:.22;line-height:1}
+  .step h3{margin:10px 0 10px}
+  .step p{font-size:.97rem;margin:0}
+  .bites{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .bite{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px}
+  .bite h4{font-family:"Archivo";font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+  .bite p{font-size:.93rem;margin:0;color:var(--slate)}
+
+  /* CTA band */
+  .ctaband{background:
+      radial-gradient(900px 400px at 85% 0%,rgba(41,104,254,.4),transparent 60%),
+      linear-gradient(160deg,#070E20,#0e1c3a);
+    border-radius:30px;color:#fff;padding:64px 56px;position:relative;overflow:hidden}
+  .ctaband::after{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;opacity:.6}
+  .ctaband .inner{position:relative;z-index:2;max-width:620px}
+  .ctaband h2{color:#fff}
+  .ctaband p{color:#c3cede;margin:16px 0 28px;font-size:1.1rem}
+  .ctaband .eyebrow{color:#7aa2ff}
+  .ctaband .eyebrow::before{background:#7aa2ff}
+  .ctaband .row{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* Reviews */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .review .stars{font-size:1rem;margin-bottom:14px}
+  .review p{color:var(--slate);font-size:.98rem;flex:1}
+  .review .who{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .review .av{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;
+    font-family:"Archivo";font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+  .review .who b{display:block;color:var(--ink);font-family:"Archivo";font-weight:700;font-size:.98rem}
+  .review .who span{font-size:.82rem;color:var(--slate-2)}
+
+  /* Team */
+  .team{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px}
+  .mem{text-align:center}
+  .mem .ph{aspect-ratio:1;border-radius:20px;background:linear-gradient(160deg,#17315f,#2968FE);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-family:"Archivo";font-weight:900;
+    font-size:2rem;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+  .mem.lead .ph{background:linear-gradient(160deg,#070E20,#1c54e0)}
+  .mem b{color:var(--ink);font-family:"Archivo";font-weight:700;display:block;font-size:1rem}
+  .mem span{font-size:.85rem;color:var(--slate-2)}
+
+  /* Payments */
+  .pay{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:46px}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
+  .pcard .ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .pcard .ic svg{width:24px;height:24px}
+  .pcard h3{font-size:1.1rem;margin-bottom:8px}
+  .pcard p{font-size:.92rem;margin:0;color:var(--slate)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .info-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:22px}
+  .info-list li{display:flex;gap:16px;align-items:flex-start}
+  .info-list .ic{flex:0 0 46px;width:46px;height:46px;border-radius:13px;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center}
+  .info-list .ic svg{width:21px;height:21px}
+  .info-list b{display:block;color:var(--ink);font-family:"Archivo";font-weight:700;margin-bottom:2px}
+  .info-list a,.info-list span{color:var(--slate)}
+  .map{margin-top:30px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .map iframe{width:100%;height:260px;border:0;display:block;filter:grayscale(.1)}
+  .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+  .form .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:600;color:var(--ink);font-size:.9rem;margin-bottom:7px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);
+    border-radius:12px;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--bg);transition:.2s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+  .field textarea{resize:vertical;min-height:110px}
+  .radio-row{display:flex;gap:22px}
+  .radio-row label{display:flex;align-items:center;gap:8px;font-weight:500;color:var(--slate)}
+
+  /* Footer */
+  footer{background:var(--navy);color:#9aa6b8;padding:72px 0 30px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px}
+  footer .logo{margin-bottom:18px}
+  footer p{font-size:.95rem;color:#8b98ab;max-width:30ch}
+  .fcol h4{color:#fff;font-family:"Archivo";font-weight:800;font-size:.85rem;letter-spacing:.14em;
+    text-transform:uppercase;margin-bottom:18px}
+  .fcol ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+  .fcol a{color:#9aa6b8;font-size:.95rem;transition:color .2s}
+  .fcol a:hover{color:#fff}
+  .socials{display:flex;gap:11px;margin-top:18px}
+  .socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.07);color:#cdd7e6;
+    display:flex;align-items:center;justify-content:center;transition:.2s}
+  .socials a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+  .socials svg{width:18px;height:18px}
+  .hours-line{display:flex;justify-content:space-between;font-size:.93rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .hours-line span:last-child{color:#cdd7e6;font-weight:600}
+  .copy{border-top:1px solid rgba(255,255,255,.08);margin-top:48px;padding-top:26px;display:flex;
+    justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem;color:#73819a}
+  .copy a{color:#9aa6b8}
+
+  /* Mobile menu panel */
+  .mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(7,14,32,.98);backdrop-filter:blur(10px);
+    display:none;flex-direction:column;padding:26px 24px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+  .mobile-menu a{color:#fff;font-family:"Archivo";font-weight:800;font-size:1.5rem;padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08)}
+  .mobile-menu .close{width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.2);
+    background:transparent;color:#fff;font-size:1.4rem;cursor:pointer}
+
+  /* Responsive */
+  @media(max-width:1000px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px;padding-bottom:64px}
+    .hero-card{max-width:430px;margin:0 auto;width:100%}
+    .split,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .cards3,.svc-grid,.steps,.reviews,.pay{grid-template-columns:1fr 1fr}
+    .team{grid-template-columns:repeat(3,1fr)}
+    .fgrid{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr;gap:34px}
+  }
+  @media(max-width:720px){
+    body{font-size:16px}
+    .menu,.nav-phone{display:none}
+    .hamburger{display:flex}
+    .topbar .right .hide-sm{display:none}
+    .sec{padding:64px 0}
+    .cards3,.svc-grid,.steps,.reviews,.pay,.bites,.fgrid,.team{grid-template-columns:1fr}
+    .form .grid2{grid-template-columns:1fr}
+    .ctaband{padding:44px 26px}
+    .wrap{padding:0 16px}
+    .team{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="tel:5305346666"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <b>Tel: 530.534.6666</b></a>
+    <div class="right">
+      <a class="hide-sm" href="mailto:info@yourprodental.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg> info@yourprodental.com</a>
+      <span class="sep hide-sm">|</span>
+      <span class="hide-sm">Se Habla Español</span>
+      <span class="sep">|</span>
+      <span>New patients &amp; walk-ins welcome</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <img src="assets/logo-white.png" alt="Pro Dental — Dental Group of Dr. Amy H Pham, Oroville CA" />
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#invisalign">Invisalign</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#resources">Patient Resources</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:5305346666"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>530.534.6666</a>
+      <a class="btn btn-primary" href="#contact">Book Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <button class="hamburger" id="openMenu" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="top">
+    <span class="logo"><img src="assets/logo-white.png" alt="Pro Dental" /></span>
+    <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
+  </div>
+  <a href="#top">Home</a>
+  <a href="#invisalign">Invisalign</a>
+  <a href="#services">Services</a>
+  <a href="#resources">Patient Resources</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" style="margin-top:28px;justify-content:center" href="#contact">Book Appointment</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow hero-eyebrow">Oroville, California · Since 2007</span>
+      <h1>Family &amp; cosmetic dentistry to keep you <span class="accent">smiling</span> at your best.</h1>
+      <p class="lead">At Pro Dental, we specialize in family and cosmetic dentistry to keep your smile at its best. Located in Oroville, California, Dr. Amy Pham has provided the best care possible for our patients since 2007 — in a comfortable, welcoming atmosphere.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Book Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-outline-white" href="tel:5305346666">Call 530.534.6666</a>
+      </div>
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <b>5.0</b>
+        <span>· Patient reviews on Google &amp; Yellow Pages</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="scene"></div>
+      <div class="glow"></div>
+      <svg class="tooth" viewBox="0 0 120 130" fill="none">
+        <path d="M60 14c-11 0-15 5-24 5S20 24 20 40c0 20 9 76 15 76 5 0 6-11 10-18 2.5-4 5-6 8-6s5.5 2 8 6c4 7 5 18 10 18 6 0 15-56 15-76 0-16-7-21-16-21s-6-5-10-5z" fill="#fff"/>
+        <path d="M44 42c4-5 12-6 18-3" stroke="#2968FE" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div class="hero-badge2"><b>Dr. Amy Pham</b><span>Family &amp; Cosmetic</span></div>
+      <div class="hero-badge"><b>2007</b><span>Caring for Oroville smiles</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- About / Welcome -->
+<section class="sec" id="about">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Welcome to Pro Dental</span>
+      <h2>Our family &amp; cosmetic dentistry.</h2>
+      <p style="margin-top:20px">Are you ready to give your smile a makeover? At ProDental, we specialize in family and cosmetic dentistry to keep your smile at it's best. Located in Oroville, California, Dr. Pham has provided the best care possible for our patients since 2007. We are dedicated to providing excellent oral health and a comfortable atmosphere.</p>
+      <p>Whether you are looking for preventative dental care or new bridges and crowns, ProDental is here for you. ProDental welcomes new patients and walk-ins, however, appointments are preferred to help keep your wait time down. Please contact us today to setup your plan for a beautiful smile!</p>
+      <ul class="checks">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>New patients &amp; walk-ins always welcome</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>We accept most dental insurance</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Zero percent financing available · Se Habla Español</li>
+      </ul>
+      <a class="btn btn-primary" href="#contact">Setup your plan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+    <div class="about-visual">
+      <div class="pat"></div>
+      <svg class="big-mark" viewBox="0 0 120 130" fill="none">
+        <path d="M60 14c-11 0-15 5-24 5S20 24 20 40c0 20 9 76 15 76 5 0 6-11 10-18 2.5-4 5-6 8-6s5.5 2 8 6c4 7 5 18 10 18 6 0 15-56 15-76 0-16-7-21-16-21s-6-5-10-5z" fill="#fff" opacity=".95"/>
+      </svg>
+      <div class="vbadge"><b>All ages</b><span>One roof for your whole family</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>2007</b><span>Serving Oroville since</span></div>
+      <div class="stat"><b>All<i> ages</i></b><span>Family dentistry, one roof</span></div>
+      <div class="stat"><b>0<i>%</i></b><span>Financing available</span></div>
+      <div class="stat"><b>5<i>★</i></b><span>Patient-rated care</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Core services (3 cards) -->
+<section class="sec bg-alt">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What we do</span>
+      <h2>The right care for your smile.</h2>
+      <p>From preventive cleanings to a full smile makeover, Dr. Amy Pham and her friendly staff can help provide you with that finishing touch.</p>
+    </div>
+    <div class="cards3">
+      <article class="scard">
+        <div class="top"><div class="mesh" style="background:linear-gradient(160deg,#17315f,#2968FE)"></div>
+          <svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg>
+        </div>
+        <div class="body">
+          <span class="label">Your family</span>
+          <h3>Preventive Dentistry</h3>
+          <p>Preventive dentistry is the practice of caring for your teeth to keep them healthy. This helps to avoid cavities, gum disease, enamel-wear, and more — through daily brushing and regular dental cleanings.</p>
+          <a class="learn" href="#services">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+      <article class="scard">
+        <div class="top"><div class="mesh" style="background:linear-gradient(160deg,#0e1c3a,#1c54e0)"></div>
+          <svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 5.2L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.8L12 2z"/></svg>
+        </div>
+        <div class="body">
+          <span class="label">Your smile</span>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Regular dental care can give you a brilliant smile you'll love sharing. From teeth straightening and whitening to veneers and implants, we can help provide you with that winning smile.</p>
+          <a class="learn" href="#services">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+      <article class="scard">
+        <div class="top"><div class="mesh" style="background:linear-gradient(160deg,#143a6e,#3b82f6)"></div>
+          <svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6V3zM6 21h12v-4a6 6 0 0 0-6-6 6 6 0 0 0-6 6v4z"/></svg>
+        </div>
+        <div class="body">
+          <span class="label">Your bite</span>
+          <h3>Invisalign</h3>
+          <p>Clear, removable aligners that gradually straighten your teeth through advanced digital 3D imaging technology — closing gaps and correcting bites toward your dream smile.</p>
+          <a class="learn" href="#invisalign">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Full services list -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">ProDental Services</span>
+      <h2>The latest treatments for dentistry.</h2>
+      <p>ProDental offers the latest treatments for dentistry. If you are looking to fill a cavity, need cleaning or any other dental services, let ProDental take care of you and your dental health. We offer services for the entire family and we accept most insurance. We also offer zero percent financing. New patients are welcome. Se Habla Español.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M3 10h5"/></svg></span>Digital X-Ray (Reduced Price)</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>Low Radiation Exposure</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4M4 7v6M20 7v6M4 13h16"/></svg></span>Crowns and Bridges</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v5a6 6 0 0 1-12 0V3z"/></svg></span>Dentures</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3l7 7-9 9-7 1 1-7 8-10z"/></svg></span>Extractions</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 9l7-3 7 3"/></svg></span>Laser Gum Therapy</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg></span>Preventive Dentistry</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></svg></span>Dental Implant</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v4a6 6 0 0 1-12 0V3zM6 21h12v-4a6 6 0 0 0-12 0v4z"/></svg></span>Orthodontics (Invisalign)</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 5.2L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.8L12 2z"/></svg></span>One-Hour Whitening (ZOOM!)</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 7 4 7 8c0 6 2 14 5 14s5-8 5-14c0-4-1-6-5-6z"/></svg></span>Root Canals (Endodontics)</div>
+      <div class="svc"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="16" rx="3"/></svg></span>Veneers</div>
+    </div>
+    <p style="margin-top:34px;text-align:center;font-size:.98rem;color:var(--slate-2)">Appointments are preferred, but walk-ins are always welcome. Please contact us today to set up an appointment.</p>
+  </div>
+</section>
+
+<!-- Invisalign -->
+<section class="sec bg-alt" id="invisalign">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Invisalign Treatment</span>
+      <h2>Straighten your teeth, clearly.</h2>
+      <p>Invisalign treatment is the process of wearing a series of clear, removable aligners that gradually straighten your teeth through advanced digital 3D image technology based on your specific needs — closing gaps or spaces and correcting bites toward your desired position.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>The Treatment</h3><p>The journey begins with a scan or impressions. Your orthodontist works closely with Invisalign treatment specialists to develop a complete digital treatment plan, carefully plotting your best smile from start to finish.</p></div>
+      <div class="step"><span class="num">02</span><h3>The Aligners</h3><p>You'll receive Invisalign clear aligners created with proprietary SmartTrack material. Wear them for 22 hours a day, but easily remove them so there are fewer interruptions to your lifestyle.</p></div>
+      <div class="step"><span class="num">03</span><h3>The Transformation</h3><p>As you progress through treatment, you'll see your smile and life transform through a series of small, expertly designed shifts toward your final, desired smile.</p></div>
+    </div>
+    <div class="bites">
+      <div class="bite"><h4>Over Bite</h4><p>An overbite is when your upper front teeth overlap with your lower front teeth. Most people have at least a little overbite.</p></div>
+      <div class="bite"><h4>Under Bite</h4><p>An under bite is when you close your mouth and your lower front teeth are in front of your upper teeth.</p></div>
+      <div class="bite"><h4>Cross Bite</h4><p>When you close your mouth and some of your upper teeth rest on top of the lower teeth rather than on the outside, like they normally would.</p></div>
+      <div class="bite"><h4>Gaps In Teeth</h4><p>When you have empty spaces between two or more of your teeth, this is a spacing issue or gap teeth.</p></div>
+      <div class="bite"><h4>Open Bite</h4><p>When the mouth is closed and your upper and lower teeth don't touch, this is referred to as an open bite.</p></div>
+      <div class="bite"><h4>Crowded Teeth</h4><p>When there is not enough space in your jaw for your teeth to fit normally, they can bunch up, overlap and twist.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="ctaband">
+      <div class="inner">
+        <span class="eyebrow">Free · No obligation</span>
+        <h2>Are you ready to give your smile a makeover?</h2>
+        <p>Curious about how ProDental can help? Call today and schedule your consultation — we look forward to making you smile.</p>
+        <div class="row">
+          <a class="btn btn-white" href="#contact">Book Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-outline-white" href="tel:5305346666">Call 530.534.6666</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow center">What the customers say</span>
+      <h2>Hear it from your neighbors.</h2>
+      <p>ProDental Group Of Amy H Pham, A Professional Dental Corp — reviews on Yellow Pages &amp; Google.</p>
+    </div>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>They're a great place to go, I have nothing bad to say about them! I recommend this place to people! They're great with my 9 and 11 year old daughters too!</p><div class="who"><span class="av">AR</span><span><b>April Redden</b><span>@ Google</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>Overall, I would rate ProDental 5/5. I went in there with my sister expecting quality service and that's what I got! The professionalism deserves to be applauded. I would easily recommend any family/friends to this place.</p><div class="who"><span class="av">DJ</span><span><b>Dylan J.</b><span>@ Yellow Pages</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>Can't say that I have any negative comments about ProDental. I've been to a lot of different dentists before and this experience was miles ahead of my average experience. They're professionals at what they do. I would come back any day.</p><div class="who"><span class="av">PN</span><span><b>Patrick N.</b><span>@ Yellow Pages</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>After reading the other reviews, I decided I would try Dr. Pham because my tooth pain wasn't going away. Her office returned my call within 10 mins on a Friday morning and met me within the hour. She is a very kind person — worth every penny!</p><div class="who"><span class="av">CN</span><span><b>Clinton N.</b><span>@ Yellow Pages</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>Everyone is so helpful and understanding at ProDental! I get the sense that they genuinely care about you as a patient. They answered every question I threw at them and I felt like I learned a lot. One of my best experiences to date!</p><div class="who"><span class="av">KT</span><span><b>Kenn T.</b><span>@ Yellow Pages</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>My dental plate broke and they got me in the next day and fitted me for a new pair. All of the folks working there were beyond nice and friendly. I am new to this area as we were in the Camp Fire, so your kindness was greatly appreciated. Thank you so much.</p><div class="who"><span class="av">DS</span><span><b>Diane Smith</b><span>@ Google</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>They are SO amazing &amp; great! Dr. Pham is super sweet, and every person I interacted with in the office was pleasant and professional. The hygienist who cleaned my teeth was incredibly knowledgeable and caring. So grateful!</p><div class="who"><span class="av">SA</span><span><b>Starr Adams</b><span>@ Google</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>I am so impressed with your staff. I have always hated going to the dentist but you guys make me feel comfortable. I tell everybody about you! Glad to have finally found a dentist where I don't dread going. Can't wait for my new smile!</p><div class="who"><span class="av">BC</span><span><b>Bonnie Cox</b><span>@ Google</span></span></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>My experience with Pro Dental has been very encouraging. All the staff have been cordial and courteous. All equipment and rooms are modern, clean and pleasant. I found Dr. Pham's knowledge and experience to be professional and friendly. I'm going back.</p><div class="who"><span class="av">HS</span><span><b>Helen Starkey</b><span>@ Google</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="sec bg-alt">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow center">Our friendly staff</span>
+      <h2>A team that works like a family.</h2>
+      <p>Dr. Amy Pham and her friendly staff welcome you and your family. When you visit our practice, our friendly office coordinators will make sure you're well taken care of.</p>
+    </div>
+    <div class="team">
+      <div class="mem lead"><div class="ph">AP</div><b>Dr. Amy Pham</b><span>Dentist</span></div>
+      <div class="mem"><div class="ph">K</div><b>Kathryn</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">E</div><b>Erica</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">D</div><b>Don</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">A</div><b>Amabelle</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">L</div><b>Laura</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">K</div><b>Kayla</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">A</div><b>Amanda</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph">R</div><b>Rose</b><span>Team Member</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Patient Resources / Payments -->
+<section class="sec" id="resources">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Patient Resources</span>
+      <h2>Simple visits, flexible payments.</h2>
+      <p>Before your first visit, please print and complete our new patient forms to help us streamline your appointment. We accept almost all forms of dental insurance, and offer financing to fit your budget.</p>
+    </div>
+    <div class="pay">
+      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><h3>CareCredit</h3><p>No interest if paid within 3, 6, or 12 months. Minimum monthly payments required.</p></div>
+      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><h3>Credit Card</h3><p>For your convenience, we accept American Express, Discover, MasterCard and Visa.</p></div>
+      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></span><h3>Dental Insurance</h3><p>We accept almost all forms of dental insurance. Payment in full is asked on the day of service.</p></div>
+      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4M15 15h2"/></svg></span><h3>Money Order / Check</h3><p>We also accept money orders or checks for your dental care.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="sec bg-alt" id="contact">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Setup your plan for a beautiful smile.</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <ul class="info-list">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Visit Us</b><a href="https://maps.google.com/maps?q=2630%20Olive%20Highway%2C%20Suite%20A%2C%20Oroville%2C%20CA%2095966" target="_blank" rel="noopener">2630 Olive Highway, Suite A,<br>Oroville, CA 95966</a></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><b>Call or Fax</b><a href="tel:5305346666">Tel: 530.534.6666</a><br><span>Fax: 530.534.1040</span></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span><div><b>Email</b><a href="mailto:info@yourprodental.com">info@yourprodental.com</a></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Business Hours</b><span>Mon – Thurs: 8 a.m. – 5 p.m.<br>Friday: Appointment only<br>Sat – Sun: Closed</span></div></li>
+        </ul>
+        <div class="map">
+          <iframe title="Pro Dental location map" src="https://maps.google.com/maps?q=2630%20Olive%20Highway%2C%20Suite%20A%2C%20Oroville%2C%20CA%2095966&t=m&z=15&output=embed&iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <form class="form" onsubmit="return false">
+        <div class="grid2">
+          <div class="field"><label>First Name *</label><input type="text" required></div>
+          <div class="field"><label>Last Name *</label><input type="text" required></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Email *</label><input type="email" required></div>
+          <div class="field"><label>Phone *</label><input type="tel" required></div>
+        </div>
+        <div class="field"><label>Comment</label><textarea placeholder="How can we help you smile?"></textarea></div>
+        <div class="field">
+          <label>Preferred method of contact</label>
+          <div class="radio-row">
+            <label><input type="radio" name="contact" checked> Phone</label>
+            <label><input type="radio" name="contact"> Email</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Submit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#top">
+          <img src="assets/logo-white.png" alt="Pro Dental" />
+        </a>
+        <p>Dental Group of Dr. Amy H Pham. Family and cosmetic dentistry in Oroville, California.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/prodental.oroville" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/prodentalinsta/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.google.com/maps/place/Pro+Dental+Dental+Group/@39.5053454,-121.5437916,15z/data=!4m5!3m4!1s0x0:0xb993740d50a50e4c!8m2!3d39.5053454!4d-121.5437916" target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v3.8h5.35c-.25 1.5-1.8 4.4-5.35 4.4a6.3 6.3 0 1 1 0-12.6c1.9 0 3.2.8 3.9 1.5l2.7-2.6C16.9 3.5 14.7 2.5 12 2.5a9.5 9.5 0 1 0 0 19c5.5 0 9.1-3.85 9.1-9.3 0-.6-.05-1.05-.15-1.1z"/></svg></a>
+          <a href="https://www.yellowpages.com/oroville-ca/mip/prodental-group-of-amy-h-pham-a-professional-dental-corp-21982688?lid=204230897" target="_blank" rel="noopener" aria-label="Yelp / Yellow Pages"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1 0-2 .5-2 2v7c0 1.5 2 2 2.8.7l4-6C17.6 4 15.3 2 12 2zM8 13l-5 1.6c-1.4.5-1 2.7.5 2.7l6-.1c1.5 0 1.8-2 .4-2.6L8 13zm2.8 3.3c-1.1-.9-2.8.5-2 1.8l3 5c.8 1.3 2.8.4 2.6-1.1l-.7-5c-.2-1-1.2-1.3-2-1.1zm7.5-2.6l-5 .6c-1.5.2-1.4 2.3.1 2.6l5.9 1.2c1.5.3 2.3-1.8 1-2.6l-2-1.8z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#invisalign">Invisalign</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#resources">Patient Resources</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:5305346666">Tel: 530.534.6666</a></li>
+          <li><a>Fax: 530.534.1040</a></li>
+          <li><a href="mailto:info@yourprodental.com">info@yourprodental.com</a></li>
+          <li><a href="https://maps.google.com/maps?q=2630%20Olive%20Highway%2C%20Suite%20A%2C%20Oroville%2C%20CA%2095966" target="_blank" rel="noopener">2630 Olive Highway, Suite A, Oroville, CA 95966</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Business Hours</h4>
+        <div class="hours-line"><span>Mon – Thurs</span><span>8am – 5pm</span></div>
+        <div class="hours-line"><span>Friday</span><span>By appointment</span></div>
+        <div class="hours-line"><span>Sat – Sun</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© All rights reserved Prodental corporation 2020 &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span>
+      <span>Design By Western Web Design</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const mm = document.getElementById('mobileMenu');
+  document.getElementById('openMenu').addEventListener('click', ()=>mm.classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click', ()=>mm.classList.remove('open'));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>mm.classList.remove('open')));
+</script>
+</body>
+</html>
