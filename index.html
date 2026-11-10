@@ -119,6 +119,8 @@
   .hero-card{position:relative;background:linear-gradient(160deg,#122a55,#0e1c3a);border-radius:28px;
     aspect-ratio:4/4.4;border:1px solid rgba(255,255,255,.1);overflow:hidden;
     box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,14,32,.18) 0%,rgba(7,14,32,.08) 45%,rgba(7,14,32,.62) 100%)}
   .hero-card .scene{position:absolute;inset:0;
     background:radial-gradient(130% 100% at 50% 0%,#1b3a6e,#0b1733 70%);}
   .hero-card .glow{position:absolute;inset:0;background:
@@ -152,6 +154,8 @@
   .about-visual .pat{position:absolute;inset:0;opacity:.5;
     background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px}
   .about-visual .big-mark{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:46%;opacity:.95}
+  .about-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,14,32,.12),rgba(7,14,32,.5))}
   .about-visual .vbadge{position:absolute;left:20px;bottom:20px;background:rgba(7,14,32,.8);
     border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 20px;color:#fff;backdrop-filter:blur(6px)}
   .about-visual .vbadge b{font-family:"Archivo";font-weight:900;font-size:1.7rem;display:block;line-height:1}
@@ -207,6 +211,18 @@
   .bite{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px}
   .bite h4{font-family:"Archivo";font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
   .bite p{font-size:.93rem;margin:0;color:var(--slate)}
+  .invis-media{border-radius:var(--radius);overflow:hidden;margin-top:44px;height:300px;
+    box-shadow:var(--shadow);position:relative;border:1px solid var(--line)}
+  .invis-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .faq{max-width:840px;margin:50px auto 0;display:grid;gap:14px}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:2px 26px;box-shadow:var(--shadow-sm);transition:border-color .2s}
+  .faq details[open]{border-color:#bcd0ee}
+  .faq summary{list-style:none;cursor:pointer;font-family:"Archivo",sans-serif;font-weight:700;color:var(--ink);
+    font-size:1.06rem;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--blue);font-weight:300;transition:transform .2s}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{margin:0 0 22px;color:var(--slate);font-size:.99rem}
 
   /* CTA band */
   .ctaband{background:
@@ -236,9 +252,10 @@
   /* Team */
   .team{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px}
   .mem{text-align:center}
-  .mem .ph{aspect-ratio:1;border-radius:20px;background:linear-gradient(160deg,#17315f,#2968FE);
+  .mem .ph{aspect-ratio:3/4;border-radius:20px;background:linear-gradient(160deg,#17315f,#2968FE);
     display:flex;align-items:center;justify-content:center;color:#fff;font-family:"Archivo";font-weight:900;
-    font-size:2rem;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+    font-size:2.4rem;margin-bottom:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+  .mem .ph img{width:100%;height:100%;object-fit:cover;object-position:top center}
   .mem.lead .ph{background:linear-gradient(160deg,#070E20,#1c54e0)}
   .mem b{color:var(--ink);font-family:"Archivo";font-weight:700;display:block;font-size:1rem}
   .mem span{font-size:.85rem;color:var(--slate-2)}
@@ -249,6 +266,8 @@
   .pcard .ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);color:var(--blue);
     display:flex;align-items:center;justify-content:center;margin-bottom:16px}
   .pcard .ic svg{width:24px;height:24px}
+  .pcard .plogo{height:56px;margin-bottom:18px;display:flex;align-items:center}
+  .pcard .plogo img{max-height:56px;max-width:170px;width:auto;object-fit:contain}
   .pcard h3{font-size:1.1rem;margin-bottom:8px}
   .pcard p{font-size:.92rem;margin:0;color:var(--slate)}
 
@@ -402,12 +421,8 @@
       </div>
     </div>
     <div class="hero-card">
-      <div class="scene"></div>
-      <div class="glow"></div>
-      <svg class="tooth" viewBox="0 0 120 130" fill="none">
-        <path d="M60 14c-11 0-15 5-24 5S20 24 20 40c0 20 9 76 15 76 5 0 6-11 10-18 2.5-4 5-6 8-6s5.5 2 8 6c4 7 5 18 10 18 6 0 15-56 15-76 0-16-7-21-16-21s-6-5-10-5z" fill="#fff"/>
-        <path d="M44 42c4-5 12-6 18-3" stroke="#2968FE" stroke-width="4" stroke-linecap="round"/>
-      </svg>
+      <img class="hero-photo" src="assets/clinic/interior.jpg" alt="The friendly Pro Dental team in Oroville, California" />
+      <div class="hero-photo-overlay"></div>
       <div class="hero-badge2"><b>Dr. Amy Pham</b><span>Family &amp; Cosmetic</span></div>
       <div class="hero-badge"><b>2007</b><span>Caring for Oroville smiles</span></div>
     </div>
@@ -430,10 +445,8 @@
       <a class="btn btn-primary" href="#contact">Setup your plan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </div>
     <div class="about-visual">
-      <div class="pat"></div>
-      <svg class="big-mark" viewBox="0 0 120 130" fill="none">
-        <path d="M60 14c-11 0-15 5-24 5S20 24 20 40c0 20 9 76 15 76 5 0 6-11 10-18 2.5-4 5-6 8-6s5.5 2 8 6c4 7 5 18 10 18 6 0 15-56 15-76 0-16-7-21-16-21s-6-5-10-5z" fill="#fff" opacity=".95"/>
-      </svg>
+      <img class="about-photo" src="assets/clinic/reception.jpg" alt="Pro Dental office in Oroville, California" />
+      <div class="about-photo-overlay"></div>
       <div class="vbadge"><b>All ages</b><span>One roof for your whole family</span></div>
     </div>
   </div>
@@ -520,6 +533,28 @@
   </div>
 </section>
 
+<!-- Technology: Digital X-Ray & 3D imaging -->
+<section class="sec bg-white" id="technology">
+  <div class="wrap split">
+    <div class="about-visual" style="min-height:400px">
+      <img class="about-photo" src="assets/clinic/planmeca.png" alt="Planmeca 3D imaging technology at Pro Dental" loading="lazy" style="object-fit:cover" />
+      <div class="about-photo-overlay"></div>
+      <div class="vbadge"><b>3D</b><span>Imaging now at ProDental</span></div>
+    </div>
+    <div>
+      <span class="eyebrow">Technology</span>
+      <h2>Digital X-rays &amp; 3D imaging.</h2>
+      <p style="margin-top:20px">Digital x-rays have many advantages over regular film x-rays, including immediate viewing of the imaged area with significantly less radiation exposure for the patient. ProDental can then print or copy your digital x-ray images, and they can be sent electronically to your insurance company — which may help claims get processed faster.</p>
+      <p>We are so excited to now be offering 3D imaging at ProDental. The unique way 3D dentistry works means it offers numerous features found nowhere else in dental technology — with a huge number of advantages over technologies like traditional X-ray and medical CT scans.</p>
+      <ul class="checks">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Significantly less radiation exposure</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Immediate viewing &amp; faster insurance claims</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Environmentally friendly — no film or chemicals</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- Invisalign -->
 <section class="sec bg-alt" id="invisalign">
   <div class="wrap">
@@ -528,6 +563,7 @@
       <h2>Straighten your teeth, clearly.</h2>
       <p>Invisalign treatment is the process of wearing a series of clear, removable aligners that gradually straighten your teeth through advanced digital 3D image technology based on your specific needs — closing gaps or spaces and correcting bites toward your desired position.</p>
     </div>
+    <div class="invis-media"><img src="assets/clinic/invisalign-adult.png" alt="Smiling patient with Invisalign clear aligners" loading="lazy"></div>
     <div class="steps">
       <div class="step"><span class="num">01</span><h3>The Treatment</h3><p>The journey begins with a scan or impressions. Your orthodontist works closely with Invisalign treatment specialists to develop a complete digital treatment plan, carefully plotting your best smile from start to finish.</p></div>
       <div class="step"><span class="num">02</span><h3>The Aligners</h3><p>You'll receive Invisalign clear aligners created with proprietary SmartTrack material. Wear them for 22 hours a day, but easily remove them so there are fewer interruptions to your lifestyle.</p></div>
@@ -540,6 +576,13 @@
       <div class="bite"><h4>Gaps In Teeth</h4><p>When you have empty spaces between two or more of your teeth, this is a spacing issue or gap teeth.</p></div>
       <div class="bite"><h4>Open Bite</h4><p>When the mouth is closed and your upper and lower teeth don't touch, this is referred to as an open bite.</p></div>
       <div class="bite"><h4>Crowded Teeth</h4><p>When there is not enough space in your jaw for your teeth to fit normally, they can bunch up, overlap and twist.</p></div>
+    </div>
+    <div class="faq">
+      <details open><summary>How long does it take to straighten teeth with Invisalign?</summary><p>The average time needed for Invisalign to straighten your teeth is about 12 months. The length of treatment depends on the severity of your case and can only be determined by your doctor.</p></details>
+      <details><summary>How will Invisalign effectively move my teeth?</summary><p>Invisalign doesn't use metal brackets or wires to move your teeth. Instead, a series of clear aligners apply constant pressure to your teeth. During each stage, only certain teeth are allowed to move. Many people start seeing a difference in their teeth within two to three months of starting to use the aligners.</p></details>
+      <details><summary>What can you not eat with Invisalign?</summary><p>With the removable nature of the aligners, you can eat and drink whatever you want while in treatment. Brush your teeth after each meal and prior to re-inserting your aligners to maintain proper hygiene and fresh breath.</p></details>
+      <details><summary>Will smoking stain the aligners?</summary><p>We discourage smoking, or drinking tea or coffee, while wearing aligners, because it is possible for the aligners to become discolored.</p></details>
+      <details><summary>How often must I see my Invisalign doctor?</summary><p>Depending on the nature of your treatment, your dentist may have specific recommendations about how often you should come in. Typically, adult Invisalign patients will need to visit the dentist at least once every six weeks.</p></details>
     </div>
   </div>
 </section>
@@ -592,14 +635,14 @@
       <p>Dr. Amy Pham and her friendly staff welcome you and your family. When you visit our practice, our friendly office coordinators will make sure you're well taken care of.</p>
     </div>
     <div class="team">
-      <div class="mem lead"><div class="ph">AP</div><b>Dr. Amy Pham</b><span>Dentist</span></div>
-      <div class="mem"><div class="ph">K</div><b>Kathryn</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">E</div><b>Erica</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">D</div><b>Don</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">A</div><b>Amabelle</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">L</div><b>Laura</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">K</div><b>Kayla</b><span>Team Member</span></div>
-      <div class="mem"><div class="ph">A</div><b>Amanda</b><span>Team Member</span></div>
+      <div class="mem lead"><div class="ph"><img src="assets/team/dr-pham.png" alt="Dr. Amy Pham" loading="lazy"></div><b>Dr. Amy Pham</b><span>Dentist</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/kathryn.png" alt="Kathryn" loading="lazy"></div><b>Kathryn</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/erica.png" alt="Erica" loading="lazy"></div><b>Erica</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/don.png" alt="Don" loading="lazy"></div><b>Don</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/amabelle.png" alt="Amabelle" loading="lazy"></div><b>Amabelle</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/laura.png" alt="Laura" loading="lazy"></div><b>Laura</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/kayla.png" alt="Kayla" loading="lazy"></div><b>Kayla</b><span>Team Member</span></div>
+      <div class="mem"><div class="ph"><img src="assets/team/amanda.png" alt="Amanda" loading="lazy"></div><b>Amanda</b><span>Team Member</span></div>
       <div class="mem"><div class="ph">R</div><b>Rose</b><span>Team Member</span></div>
     </div>
   </div>
@@ -614,10 +657,10 @@
       <p>Before your first visit, please print and complete our new patient forms to help us streamline your appointment. We accept almost all forms of dental insurance, and offer financing to fit your budget.</p>
     </div>
     <div class="pay">
-      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><h3>CareCredit</h3><p>No interest if paid within 3, 6, or 12 months. Minimum monthly payments required.</p></div>
-      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><h3>Credit Card</h3><p>For your convenience, we accept American Express, Discover, MasterCard and Visa.</p></div>
-      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></span><h3>Dental Insurance</h3><p>We accept almost all forms of dental insurance. Payment in full is asked on the day of service.</p></div>
-      <div class="pcard"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4M15 15h2"/></svg></span><h3>Money Order / Check</h3><p>We also accept money orders or checks for your dental care.</p></div>
+      <div class="pcard"><span class="plogo"><img src="assets/pay/carecredit.png" alt="CareCredit" loading="lazy"></span><h3>CareCredit</h3><p>No interest if paid within 3, 6, or 12 months. Minimum monthly payments required.</p></div>
+      <div class="pcard"><span class="plogo"><img src="assets/pay/visamaster.png" alt="Visa, MasterCard, American Express, Discover" loading="lazy"></span><h3>Credit Card</h3><p>For your convenience, we accept American Express, Discover, MasterCard and Visa.</p></div>
+      <div class="pcard"><span class="plogo"><img src="assets/pay/insurance.png" alt="Dental insurance accepted" loading="lazy"></span><h3>Dental Insurance</h3><p>We accept almost all forms of dental insurance. Payment in full is asked on the day of service.</p></div>
+      <div class="pcard"><span class="plogo"><img src="assets/pay/cashcheck.png" alt="Money order or check" loading="lazy"></span><h3>Money Order / Check</h3><p>We also accept money orders or checks for your dental care.</p></div>
     </div>
   </div>
 </section>
